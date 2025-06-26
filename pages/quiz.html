@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/Styles/css/quiz.css">
+    <title>Master Quiz</title>
+</head>
+<body>
+    
+    <header class="content">
+        <nav class="navbar">
+            <div class="logo">
+                <h1 class="colorBox" onclick="changeTextColor(this)">
+                    <span class="start">M</span>aster <span class="end">Q</span>uiz
+                </h1>
+            </div>
+            <div class="links-container">
+                <ul class="links-list">
+                    <a href="index.html" class="links-link">Accueil</a>
+                    <a href="a_propos.html" class="links-link">A propos</a>
+                    <a href="contact.html" class="links-link">Nous-contactez</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h1 class="text">
+            Top départ ! Chaque bonne réponse vous rapproche du statut de pro. Concentrez-vous !
+        </h1> 
+    </section>
+
+    <main id="quiz-container">
+        <h2 id="question">Chargement de la question...</h2>
+        <div id="options" class="options"></div>
+        <div id="timer">10</div>
+    
+        <div id="result" style="display:none;"></div>
+        <div id="end-buttons" style="display:none;">
+            <button class="btn" onclick="restartQuiz()">Rejouer</button>
+            <button class="btn" onclick="goHome()">Accueil</button>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="identity">
+                <h1 class="colorBox" onclick="changeTextColor(this)">
+                    <span class="start">M</span>aster <span class="end">Q</span>uiz
+                </h1>
+            </div>
+
+            <div class="footer-links">
+                <ul class="links-list">
+                    <a href="/pages/accueil.html" class="footer-link">Accueil</a>
+                    <a href="/pages/a_propos.html" class="footer-link">A propos</a>
+                    <a href="/pages/contact.html" class="footer-link">Nous-contactez</a>
+                </ul>
+            </div>
+
+            <div class="social-media">
+                <a href="#"><img class="social-media-links" src="../assets/Img/icons/Instagram.svg" alt="Lien vers page Instagram" width="40px"></a>
+                <a href="#"><img class="social-media-links" src="../assets/Img/icons/Discord.svg" alt="Lien vers canal Discord" width="40px"></a>
+                <a href="#"><img class="social-media-links" src="../assets/Img/icons/Whatsapp.svg" alt="Lien vers communauté WhatsApp" width="40px"></a>
+                <a href="#"><img class="social-media-links" src="../assets/Img/icons/Linkedin.svg" alt="Lien vers communauté Linkedin" width="40px"></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; <span id="current-year"></span><span>Master Quiz</span>. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script src="../assets/Scripts/Script.js"></script>
+    <script src="../assets/Scripts/questions.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const categorie = localStorage.getItem("categorieChoisie");
+        const allQuestions = questionsData[categorie];
+
+        if (!allQuestions || allQuestions.length < 10) {
+            document.getElementById("quiz-container").innerHTML = "<p>Pas assez de questions disponibles.</p>";
+            return;
+        }
+
+        // Mélanger et prendre 10 questions
+        const questions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
+        let currentQuestion = 0;
+        let score = 0;
+        let timer;
+        let countdown = 10;
+
+        const questionEl = document.getElementById("question");
+        const optionsEl = document.getElementById("options");
+        const timerEl = document.getElementById("timer");
+        const resultEl = document.getElementById("result");
+        const endButtonsEl = document.getElementById("end-buttons");
+
+        function showQuestion() {
+            const q = questions[currentQuestion];
+            questionEl.textContent = q.question;
+            optionsEl.innerHTML = "";
+
+            q.options.forEach(option => {
+            const button = document.createElement("button");
+            button.textContent = option;
+            button.classList.add("option-btn");
+            button.onclick = () => checkAnswer(option, q.answer);
+            optionsEl.appendChild(button);
+            });
+
+        startTimer();
+        }
+
+        function checkAnswer(selected, correct) {
+            clearInterval(timer);
+            const buttons = document.querySelectorAll(".option-btn");
+
+        buttons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === correct) {
+            btn.style.backgroundColor = "green";
+        } else if (btn.textContent === selected) {
+            btn.style.backgroundColor = "red";
+        }
+        });
+
+        if (selected === correct) score++;
+
+            setTimeout(() => {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                endQuiz();
+            }
+            }, 1000);
+        }
+
+        function startTimer() {
+            countdown = 10;
+            timerEl.textContent = countdown.toString().padStart(2, '0');
+
+            timer = setInterval(() => {
+                countdown--;
+                timerEl.textContent = countdown.toString().padStart(2, '0');
+
+                if (countdown === 0) {
+                    clearInterval(timer);
+                    checkAnswer(null, questions[currentQuestion].answer);
+                }
+            }, 1000);
+        }
+
+        function endQuiz() {
+            questionEl.style.display = "none";
+            optionsEl.style.display = "none";
+            timerEl.style.display = "none";
+
+            // Générer le feedback personnalisé
+            let feedback = "";
+            if (score <= 3) {
+                feedback = "Pas grave, exercez-vous continuer à vous entrainez telle est la clé des melleures.";
+            } else if (score >= 4 && score <= 6) {
+                feedback = "Pas mal, peut mieux faire donc rendez-vous au prochain round 😊👻";
+            } else if (score >= 7 && score <= 9) {
+                feedback = "Très bien. Mais pour le restez il faut continuer à s'exercer.";
+            } else {
+                feedback = "Excellent, vous êtes doué ! Continuez comme ça.";
+            }
+
+            resultEl.style.display = "block";
+            resultEl.innerHTML = `
+                <h2>Votre score est : ${score} / ${questions.length}</h2>
+                <p class="feedback">${feedback}</p>
+            `;
+            endButtonsEl.style.display = "block";
+        }
+
+
+
+        window.restartQuiz = () => location.reload();
+        window.goHome = () => window.location.href = "index.html";
+
+        showQuestion();
+        });
+
+</script>
+</body>
+</html>

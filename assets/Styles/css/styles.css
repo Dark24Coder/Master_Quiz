@@ -1,0 +1,460 @@
+/*Pour le style globale du site*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Changer la couleur du logo du site une fois cliquez*/
+
+#colorBox {
+    transition: color .6s ease-in-out;
+}
+
+/*Intégration et déclaration en locale de la police utiliser sur le site*/
+@font-face {
+    font-family: 'ZakirahsHand';
+    src: url(../../fonts/ZakirahsHand.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../../fonts/Montserrat.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Style globale du site complet*/
+
+/*Style pour la barre de navigation du site*/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    transition: top 0.6s ease-in-out;
+    z-index: 1000;
+}
+
+.navbar.hide {
+    top: -100px;
+}
+
+/*Style pour le logo du site*/
+.logo {
+    cursor: pointer;
+    color: #00B5E2;
+    transition: all .7s ease-in-out;
+}
+
+.logo:hover {
+    color: #00BFFF;
+}
+
+.start {
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'ZakirahsHand', sans-serif;
+}
+
+.end {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'ZakirahsHand', sans-serif;
+}
+
+/*Style globale pour les liens de la navbar*/
+.links-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.links-link, .footer-link{
+    text-decoration: none;
+    color: #00B5E2;
+    font-family: 'ZakirahsHand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all .7s ease-in-out;
+}
+
+.links-link:hover, .footer-link:hover {
+    color: #007ACC;
+}
+
+/*Style globale de la hero section*/
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('../../Img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    color: white;
+}
+
+.hero-title {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: #FFFFFF; 
+    text-shadow: 2px 2px 5px rgba(0,0,0,1.9);
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+.hero-paragraph {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: #ffffff;
+    padding: 30px 20px;
+    line-height: 1.5;
+}
+
+.hero-btn {
+    z-index: 1;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #FFD900;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.4s ease;
+    margin-top: auto;
+}
+
+.hero-btn:hover {
+    background-color: #FFC107;
+}
+
+/*Propriété pour le clique du bouton commencé*/
+.quiz-menu {
+    display: none;
+    position: absolute;
+    margin-left: 600px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 7px 18px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.quiz-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-menu li {
+    padding: 10px;
+    cursor: pointer;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 30px;
+    transition: background-color 0.8s ease-in-out;
+}
+
+.quiz-menu li:hover {
+    background-color: #00B5E2;
+    border-radius: 30px;
+}
+
+/*Style globale pour le footer du site*/
+.footer-section{
+    padding: 35px 60px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-link {
+    font-size: 17px;
+}
+
+.identity {
+    cursor: pointer;
+}
+
+.social-media-links {
+    border: none;
+    border-radius: 100%;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#current-year {
+    margin: 3px;
+}
+
+/*Le menu hamburger*/
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.information-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 10px;
+    gap: 30px;
+    height: 100vh;
+    background-image: url(../../Img/top-view-colourful-desk-concept-with-wired-mouse.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.animated-cat {
+    position: relative;
+    background-color: #f5f5f5;
+    padding: 30px 23px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: height 0.7s ease-in-out;
+    height: 120px;
+}
+
+.animated-cat:hover {
+    height: 180px;
+}
+
+.circle {
+    position: absolute;
+    top: -40px;
+    left: 5px;
+    width: 150px;
+    height: 150px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.7s ease-in-out;
+    z-index: 1;
+}
+
+.animated-cat:hover .circle {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.contenu {
+    position: relative;
+    z-index: 2;
+}
+
+.contenu p {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-cat:hover .contenu p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .links-container {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 20px 30px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        border-radius: 10px;
+    }
+
+    .logo {
+        font-size: 10px;
+    }
+
+    ul li {
+        list-style-type: none;
+    }
+
+    .links-container.show {
+        display: flex;
+    }
+
+    .links-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .links-link {
+        font-size: 15px;
+    }
+
+    .hero-section {
+        height: 100vh;
+        background-position: center;
+        justify-content: flex-end;
+        padding: 10px 50px;
+    }
+
+    .hero-overlay {
+        width: 100%;
+        padding: 1rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0,0,0,0));
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 20px;
+        padding: 10px 5px;
+        margin-top: 100px;
+    }
+
+    .hero-paragraph {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+
+    .hero-btn {
+        font-size: 14px;
+        padding: 12px 50px;
+        margin-top: 50px;
+        cursor: pointer;
+        font-family: 'Montserrat-Bold', sans-serif;
+        font-weight: bold;
+        transition: background-color 0.4s ease;
+        /* margin-top: auto; */
+    }
+
+    .hero-btn:hover {
+        background-color: #FFC107;
+    }
+
+    .quiz-menu {
+        display: none;
+        position: absolute;
+        margin-left: 250px;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 7px 18px rgba(0,0,0,0.5);
+    }
+
+    .quiz-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .quiz-menu li {
+        padding: 5px;
+        font-size: 13px;
+        cursor: pointer;
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 30px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .quiz-menu li:hover {
+        background-color: #00B5E2;
+        border-radius: 30px;
+    }
+
+    .footer-section{
+        padding: 10px 15px;
+    }
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-link {
+    display: none;
+}
+
+.identity {
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.social-media-links {
+    border: none;
+    border-radius: 100%;
+    width: 25px;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#current-year {
+    margin: 2px;
+}
+}
+
+
+
+

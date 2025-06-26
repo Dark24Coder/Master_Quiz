@@ -1,0 +1,184 @@
+/*Pour le style globale du site*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Changer la couleur du logo du site une fois cliquez*/
+
+#colorBox {
+    transition: color .6s ease-in-out;
+}
+
+/*Intégration et déclaration en locale de la police utiliser sur le site*/
+@font-face {
+    font-family: 'ZakirahsHand';
+    src: url(../../fonts/ZakirahsHand.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../../fonts/Montserrat.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Style globale du site complet*/
+
+/*Style pour la barre de navigation du site*/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    transition: top 0.6s ease-in-out;
+    z-index: 1000;
+}
+
+.navbar.hide {
+    top: -100px;
+}
+
+/*Style pour le logo du site*/
+.logo {
+    cursor: pointer;
+    color: #00B5E2;
+    transition: all .7s ease-in-out;
+}
+
+.logo:hover {
+    color: #00BFFF;
+}
+
+.start {
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'ZakirahsHand', sans-serif;
+}
+
+.end {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'ZakirahsHand', sans-serif;
+}
+
+/*Style globale pour les liens de la navbar*/
+.links-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.links-link, .footer-link{
+    text-decoration: none;
+    color: #00B5E2;
+    font-family: 'ZakirahsHand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all .7s ease-in-out;
+}
+
+.links-link:hover, .footer-link:hover {
+    color: #007ACC;
+}
+
+/*Style globale pour le footer du site*/
+.footer-section{
+    padding: 35px 60px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-link {
+    font-size: 17px;
+}
+
+.identity {
+    cursor: pointer;
+}
+
+.social-media-links {
+    border: none;
+    border-radius: 100%;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#current-year {
+    margin: 3px;
+}
+
+/*Style pour le main*/
+.information-container {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 100px;
+    background-image: url(../../Img/top-view-back-school-supplies-with-books-copy-space.jpg);
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p, ul, li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 800px;
+}
+
+ul, li {
+    margin-left: 20px;
+}
+
+.point {
+    font-size: 30px;
+    font-weight: bold;
+}
+.vision {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 50px;
+    /* background: #FFD900; */
+}
+
+.origin {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 50px;
+}
+
+.caract {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 50px;
+    background: #00BFFF;
+    border-radius: 20px;
+}

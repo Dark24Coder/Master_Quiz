@@ -1,0 +1,241 @@
+/*Pour le style globale du site*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Changer la couleur du logo du site une fois cliquez*/
+
+#colorBox {
+    transition: color .6s ease-in-out;
+}
+
+/*Intégration et déclaration en locale de la police utiliser sur le site*/
+@font-face {
+    font-family: 'ZakirahsHand';
+    src: url(../../fonts/ZakirahsHand.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../../fonts/Montserrat.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../../fonts/Poppins.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Style globale du site complet*/
+
+/*Style pour la barre de navigation du site*/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    transition: top 0.6s ease-in-out;
+    z-index: 1000;
+}
+
+.navbar.hide {
+    top: -100px;
+}
+
+/*Style pour le logo du site*/
+.logo {
+    cursor: pointer;
+    color: #00B5E2;
+    transition: all .7s ease-in-out;
+}
+
+.logo:hover {
+    color: #00BFFF;
+}
+
+.start {
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'ZakirahsHand', sans-serif;
+}
+
+.end {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'ZakirahsHand', sans-serif;
+}
+
+/*Style globale pour les liens de la navbar*/
+.links-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.links-link, .footer-link{
+    text-decoration: none;
+    color: #00B5E2;
+    font-family: 'ZakirahsHand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all .7s ease-in-out;
+}
+
+.links-link:hover, .footer-link:hover {
+    color: #007ACC;
+}
+
+/*Style globale pour le footer du site*/
+.footer-section{
+    padding: 35px 60px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-link {
+    font-size: 17px;
+}
+
+.identity {
+    cursor: pointer;
+}
+
+.social-media-links {
+    border: none;
+    border-radius: 100%;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#current-year {
+    margin: 3px;
+}
+
+.copyright {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/*Style de la phrase d'accroche en haut de la page*/
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 230px 150px;
+    margin-top: 90px;
+    background-image: url(../../Img/party-composition-with-string-lights-space.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+}
+
+/*Style du quiz section*/
+.option-btn {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 2;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+}
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 150px 100px;
+    background-image: url(../../Img/wireless-keyboard-colorful-figures.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#question {
+    font-family: 'Poppins', sans-serif;
+}
+
+#timer {
+    padding: 12px;
+    background-color: #FFC107;
+    border-radius: 50%;
+    transition: background 0.7s ease-in-out;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#timer:hover{
+    background: linear-gradient(to right, #e67e22, #e74c3c);
+}
+
+#result {
+    padding: 20px 50px;
+}
+
+#result h2 {
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+
+}
+
+.feedback {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 15px;
+    margin-left: 50px;
+}
+
+.btn {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 50px;
+    background: linear-gradient(to right, #e67e22, #e74c3c);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.7s ease-in-out;
+}
+
+.btn:hover {
+    background-size: 100% 100%;
+}

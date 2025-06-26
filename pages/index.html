@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/Styles/css/styles.css">
+    <title>Master Quiz</title>
+</head>
+<body>
+    
+    <header class="content">
+        <nav class="navbar">
+                <div class="logo">
+                    <h1 class="colorBox" onclick="changeTextColor(this)">
+                        <span class="start">M</span>aster <span class="end">Q</span>uiz
+                    </h1>
+                </div>
+
+            <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">☰</div>
+
+            <div class="links-container" id="nav-links">
+                <ul class="links-list">
+                    <li><a href="index.html" class="links-link">Accueil</a></li>
+                    <li><a href="a_propos.html" class="links-link">A propos</a></li>
+                    <li><a href="contact.html" class="links-link">Nous-contactez</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Bienvenue sur Master Quiz. Révèle ton esprit brillant dans tous les domaines !
+                </h1>
+                <p class="hero-paragraph">
+                    Bienvenue sur Master Quiz, votre plateforme ultime pour défier votre esprit !<br>
+                    Plongez dans des quiz passionnants, explorez nos catégories variées <br> 
+                    et testez vos connaissances en culture, sport, technologie, et bien plus encore. <br>
+                    Que vous soyez curieux débutant ou expert chevronné, amusez-vous tout en apprenant !
+                </p>
+            </div>
+        </div>
+        <button class="hero-btn" onclick="toggleMenu()">Commencer à jouer</button>
+        <div id="quiz-menu" class="quiz-menu">
+            <ul>
+                <li onclick="goToCategory('web')">Développement Web & Mobile</li>
+                <li onclick="goToCategory('culture')">Culture Générale</li>
+                <li onclick="goToCategory('informatique')">Informatique Générale</li>
+                <li onclick="goToCategory('sport')">Sport</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="information-container">
+        <div class="text">
+            <h3>Vouliez-vous en savoir plus ?</h3>
+        </div>
+        <div class="category">
+            <div class="animated-cat">
+                <div class="circle"></div>
+                <div class="contenu">
+                    <h3>Développement web & Mobile</h3>
+                    <p>Voici du contenu dans mon conteneur.</p>
+                </div>
+            </div>
+
+            <div class="animated-cat">
+                <div class="circle"></div>
+                <div class="contenu">
+                    <h3>Sport</h3>
+                    <p>Voici du contenu dans mon conteneur.</p>
+                </div>
+            </div>
+
+            <div class="animated-cat">
+                <div class="circle"></div>
+                <div class="contenu">
+                    <h3>Réseaux & Sécurité</h3>
+                    <p>Voici du contenu dans mon conteneur.</p>
+                </div>
+            </div>
+
+            <div class="animated-cat">
+                <div class="circle"></div>
+                <div class="contenu">
+                    <h3>Culture Générale</h3>
+                    <p>Voici du contenu dans mon conteneur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="identity">
+                <h1 class="colorBox" onclick="changeTextColor(this)">
+                    <span class="start">M</span>aster <span class="end">Q</span>uiz
+                </h1>
+            </div>
+
+            <div class="footer-links">
+                <ul class="links-list">
+                    <a href="/pages/accueil.html" class="footer-link">Accueil</a>
+                    <a href="/pages/a_propos.html" class="footer-link">A propos</a>
+                    <a href="/pages/contact.html" class="footer-link">Nous-contactez</a>
+                </ul>
+            </div>
+
+            <div class="social-media">
+                <a href="#"><img class="social-media-links" src="../assets/Img/icons/Instagram.svg" alt="Lien vers page Instagram" width="40px"></a>
+                <a href="#"><img class="social-media-links" src="../assets/Img/icons/Discord.svg" alt="Lien vers canal Discord" width="40px"></a>
+                <a href="#"><img class="social-media-links" src="../assets/Img/icons/Whatsapp.svg" alt="Lien vers communauté WhatsApp" width="40px"></a>
+                <a href="#"><img class="social-media-links" src="../assets/Img/icons/Linkedin.svg" alt="Lien vers communauté Linkedin" width="40px"></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; <span id="current-year"></span><span>Master Quiz</span>. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script src="../assets/Scripts/Script.js"></script>
+</body>
+</html>
