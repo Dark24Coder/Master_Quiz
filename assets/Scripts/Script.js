@@ -46,7 +46,7 @@ function goToCategory(category) {
 // Session pour gérer l'interaction et l'affichage et la redirection pour lancer le quiz sur quiz.html
 function goToCategory(categorie) {
     localStorage.setItem("categorieChoisie", categorie);
-    window.location.href = "quiz.html";
+    window.location.href = "/pages/quiz.html";
 }
 
 // Pour gérer l'interacion du menu hamburger
